@@ -25,4 +25,8 @@ func init(){
 	if err!=nil{
 		beego.Error(err.Error())
 	}
+
+	orm.RunSyncdb("default",false,true)
+	o:=orm.NewOrm()
+	o.Using("default")
 }
